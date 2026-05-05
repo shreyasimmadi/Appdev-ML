@@ -155,3 +155,4 @@ vite.config.ts.timestamp-*
 
 # Data
 backend/data/raw_pdfs/
+backend/data/parsed_md/
