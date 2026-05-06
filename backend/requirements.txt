@@ -1,0 +1,5 @@
+docling
+supabase
+sentence-transformers
+langchain-text-splitters
+python-dotenv
