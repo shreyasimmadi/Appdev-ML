@@ -25,7 +25,7 @@ def push_to_supabase(sections):
     response = supabase.table("documents").insert(data_to_insert).execute()
     return response
 
-MD_DIR = "backend/data/parsed_md"
+MD_DIR = "data/parsed_md/cmsc_131_parsed"
 for filename in os.listdir(MD_DIR):
     if filename.endswith(".md"):
         with open(os.path.join(MD_DIR, filename), "r") as f:

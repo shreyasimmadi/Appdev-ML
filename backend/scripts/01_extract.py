@@ -4,8 +4,8 @@ import os
 converter = DocumentConverter()
 
 # Drop your PDFs in backend/data/raw_pdfs/
-PDF_DIR = "backend/data/raw_pdfs"
-OUT_DIR = "backend/data/parsed_md"
+PDF_DIR = "data/raw_pdfs/cmsc_131"
+OUT_DIR = "data/parsed_md/cmsc_131_parsed"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 for filename in os.listdir(PDF_DIR):
