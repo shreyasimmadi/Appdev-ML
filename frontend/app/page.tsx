@@ -226,7 +226,7 @@ export default function Home() {
         {view === "notes" && (
           <>
             <Topbar title="Course notes" crumb="indexed corpus" showSourcesToggle={false} theme={theme} onToggleTheme={handleToggleTheme} />
-            <CourseNotes />
+            <CourseNotes onPickTopic={(topic) => handleSend(`Help me understand: ${topic}`)} />
           </>
         )}
       </main>
