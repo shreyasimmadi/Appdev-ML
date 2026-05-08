@@ -25,14 +25,21 @@ def push_to_supabase(sections):
     response = supabase.table("documents").insert(data_to_insert).execute()
     return response
 
-MD_DIR = "data/parsed_md/cmsc_131_parsed"
+MD_DIR = "../data/parsed_md/cmsc_131_parsed"
 for filename in os.listdir(MD_DIR):
     if filename.endswith(".md"):
         with open(os.path.join(MD_DIR, filename), "r") as f:
             content = f.read()
 
-        splitter = MarkdownHeaderTextSplitter(headers_to_split_on=[("#", "topic"), ("##", "subtopic")])
+        # Use filename as the topic name
+        topic_name = filename.replace(".md", "").replace("_", " ").title()
+
+        splitter = MarkdownHeaderTextSplitter(headers_to_split_on=[("##", "subtopic")])
         sections = splitter.split_text(content)
+
+        # Inject topic into each section's metadata
+        for section in sections:
+            section.metadata["topic"] = topic_name
 
         try:
             push_to_supabase(sections)
