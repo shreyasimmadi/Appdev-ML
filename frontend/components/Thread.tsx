@@ -3,7 +3,7 @@ import * as React from "react";
 import type { ChatMessage } from "../lib/types";
 import { MessageView } from "./Message";
 
-export function Thread({ messages, typing }: { messages: ChatMessage[]; typing?: boolean }) {
+export function Thread({ messages, typing }: { messages: any[]; typing?: boolean }) {
   const ref = React.useRef<HTMLDivElement>(null);
   React.useEffect(() => {
     const el = ref.current;

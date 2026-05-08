@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Paperclip, Mic, Send, Brain, Bulb } from "./icons";
+import { Mic, Send, Brain, Bulb } from "./icons";
 
 export function Composer({
   onSend,
@@ -43,9 +43,6 @@ export function Composer({
           }}
         />
         <div className="composer-row">
-          <button className="composer-pill" title="Attach a note">
-            <Paperclip size={13} /> Attach
-          </button>
           <button
             className={`composer-pill ${socratic ? "on" : ""}`}
             onClick={() => setSocratic((s) => !s)}
